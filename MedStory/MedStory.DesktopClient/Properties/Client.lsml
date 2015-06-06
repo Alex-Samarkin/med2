@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application
+  Name="LightSwitchApplication.MedStory.DesktopClient"
+  TargetPlatform="RichClient"
+  Version="1.0.0.0"
+  DefaultNavigationItem="!module/NavigationItems[Tasks]"
+  Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
+  Theme="Syncfusion.LightSwitch.Extension.Themes:SyncfusionMetroExtension" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <Application.Attributes>
+    <ModuleNamespace
+      Namespace="LightSwitchApplication" />
+    <Partial
+      IsPrimary="True" />
+  </Application.Attributes>
+  <EntityContainerGroup
+    Name="DataWorkspace">
+    <EntityContainerGroupProperty
+      Name="SecurityData"
+      EntityContainer="Microsoft.LightSwitch.Security:SecurityData">
+      <EntityContainerGroupProperty.Attributes>
+        <Generated />
+        <DisplayName
+          Value="Security Data" />
+        <Description
+          Value="Service that provides access to security-related data." />
+      </EntityContainerGroupProperty.Attributes>
+    </EntityContainerGroupProperty>
+    <EntityContainerGroupProperty
+      Name="ApplicationData"
+      EntityContainer="ApplicationData" />
+  </EntityContainerGroup>
+  <GlobalAttributeGroup>
+    <GlobalAttributeGroup.Attributes>
+      <Proxy
+        Target="ServiceInterface:LightSwitchServiceApplicationGroup" />
+    </GlobalAttributeGroup.Attributes>
+  </GlobalAttributeGroup>
+  <Application.Commands>
+    <ApplicationCommand
+      Name="ScreenCommandShowRegionItemSetListDetail"
+      Target="!module/Methods[ShowRegionItemSetListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowAreaItemSetListDetail"
+      Target="!module/Methods[ShowAreaItemSetListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowDepartmentItemSetListDetail"
+      Target="!module/Methods[ShowDepartmentItemSetListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowStreetItemSetListDetail"
+      Target="!module/Methods[ShowStreetItemSetListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowCitiItemSetListDetail"
+      Target="!module/Methods[ShowCitiItemSetListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowEditableRegionItemSetGrid"
+      Target="!module/Methods[ShowEditableRegionItemSetGrid]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowEditableAreaItemSetGrid"
+      Target="!module/Methods[ShowEditableAreaItemSetGrid]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowEditableDepartmentItemSetGrid"
+      Target="!module/Methods[ShowEditableDepartmentItemSetGrid]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowEditableCitiItemSetGrid"
+      Target="!module/Methods[ShowEditableCitiItemSetGrid]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowEditableStreetItemSetGrid"
+      Target="!module/Methods[ShowEditableStreetItemSetGrid]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowEditableRegionItemSetGrid1"
+      Target="!module/Methods[ShowEditableRegionItemSetGrid1]" />
+  </Application.Commands>
+  <Application.NavigationItems>
+    <ApplicationNavigationGroup
+      Name="Tasks"
+      DefaultItem="!module/NavigationItems[Tasks]/Children[EditableRegionItemSetGrid1]">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="Задачи" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="EditableRegionItemSetGrid1"
+        Command="!module/Commands[ScreenCommandShowEditableRegionItemSetGrid1]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
+      Name="group">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="Справочники" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="link"
+        Command="!module/Commands[ScreenCommandShowRegionItemSetListDetail]" />
+      <ApplicationNavigationLink
+        Name="link1"
+        Command="!module/Commands[ScreenCommandShowEditableRegionItemSetGrid]" />
+      <ApplicationNavigationLink
+        Name="link2"
+        Command="!module/Commands[ScreenCommandShowAreaItemSetListDetail]" />
+      <ApplicationNavigationLink
+        Name="link3"
+        Command="!module/Commands[ScreenCommandShowEditableAreaItemSetGrid]" />
+      <ApplicationNavigationLink
+        Name="link4"
+        Command="!module/Commands[ScreenCommandShowDepartmentItemSetListDetail]" />
+      <ApplicationNavigationLink
+        Name="link5"
+        Command="!module/Commands[ScreenCommandShowEditableDepartmentItemSetGrid]" />
+      <ApplicationNavigationLink
+        Name="link6"
+        Command="!module/Commands[ScreenCommandShowCitiItemSetListDetail]" />
+      <ApplicationNavigationLink
+        Name="link7"
+        Command="!module/Commands[ScreenCommandShowEditableCitiItemSetGrid]" />
+      <ApplicationNavigationLink
+        Name="link8"
+        Command="!module/Commands[ScreenCommandShowStreetItemSetListDetail]" />
+      <ApplicationNavigationLink
+        Name="link9"
+        Command="!module/Commands[ScreenCommandShowEditableStreetItemSetGrid]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
+      Name="Administration">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="Управление" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="RolesScreen"
+        Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowRolesScreen]" />
+      <ApplicationNavigationLink
+        Name="UsersScreen"
+        Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
+    </ApplicationNavigationGroup>
+  </Application.NavigationItems>
+</Application>
